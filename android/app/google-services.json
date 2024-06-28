@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "953077835466",
+    "project_id": "evenamisamapp",
+    "storage_bucket": "evenamisamapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953077835466:android:bebf9790f84d8adde9b633",
+        "android_client_info": {
+          "package_name": "com.example.even_amisam_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcI_8YburzWrxyi_t48wyREhy-nCfnkOY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

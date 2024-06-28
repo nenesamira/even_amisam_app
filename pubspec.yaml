@@ -30,16 +30,32 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  camera: ^0.10.0+3
+  zego_uikit: ^2.24.1
+  zego_uikit_prebuilt_live_streaming: ^3.8.8
+  permission_handler: ^11.0.1
+  zego_express_engine: ^3.15.1+2
+  provider: ^6.0.0
+  google_sign_in: ^5.0.5
+  url_launcher: ^6.0.10
+  firebase_core: ^2.20.0
+  firebase_auth: ^4.7.0
+  cloud_firestore: ^4.17.5  # Pour Firestore (base de données NoSQL)
+  email_validator: ^2.0.1
+  icons_flutter: ^0.0.4
+  font_awesome_flutter: ^9.2.0
+ 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
+  readmore: ^3.0.0
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -59,9 +75,14 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+
+    - assets/images/
+  #   - assets/icon/
+  #  - assets/icon/adaptive_icon_background.png
+  #  - assets/icon/adaptive_icon_foreground.png
+  #    - assets/images/your_background_image.png
+  #   - assets/images/your_logo_image.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
