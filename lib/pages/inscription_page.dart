@@ -9,11 +9,11 @@ class InscriptionPage extends StatefulWidget {
 
 class _InscriptionPageState extends State<InscriptionPage> {
   final _formKey = GlobalKey<FormState>();
-  TextEditingController _nomController = TextEditingController();
-  TextEditingController _prenomController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _motDePasseController = TextEditingController();
-  TextEditingController _confirmationMotDePasseController = TextEditingController();
+  final TextEditingController _nomController = TextEditingController();
+  final TextEditingController _prenomController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _motDePasseController = TextEditingController();
+  final TextEditingController _confirmationMotDePasseController = TextEditingController();
 
   @override
   void dispose() {
@@ -27,20 +27,16 @@ class _InscriptionPageState extends State<InscriptionPage> {
 
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
-      // Envoyer les données du formulaire (enregistrement, etc.)
-      // Par exemple, afficher les valeurs dans la console
       print('Nom: ${_nomController.text}');
       print('Prénom: ${_prenomController.text}');
       print('Email: ${_emailController.text}');
       print('Mot de passe: ${_motDePasseController.text}');
-      // Réinitialiser les champs après validation
       _nomController.clear();
       _prenomController.clear();
       _emailController.clear();
       _motDePasseController.clear();
       _confirmationMotDePasseController.clear();
 
-      // Naviguer vers la page de succès après l'inscription
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => ResultatInscription()),
@@ -53,6 +49,7 @@ class _InscriptionPageState extends State<InscriptionPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Inscription'),
+        backgroundColor: Colors.blue,
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
@@ -85,7 +82,10 @@ class _InscriptionPageState extends State<InscriptionPage> {
                     children: <Widget>[
                       TextFormField(
                         controller: _nomController,
-                        decoration: InputDecoration(labelText: 'Nom'),
+                        decoration: InputDecoration(
+                          labelText: 'Nom',
+                          border: OutlineInputBorder(),
+                        ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Veuillez entrer votre nom';
@@ -93,9 +93,13 @@ class _InscriptionPageState extends State<InscriptionPage> {
                           return null;
                         },
                       ),
+                      SizedBox(height: 16),
                       TextFormField(
                         controller: _prenomController,
-                        decoration: InputDecoration(labelText: 'Prénom'),
+                        decoration: InputDecoration(
+                          labelText: 'Prénom',
+                          border: OutlineInputBorder(),
+                        ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Veuillez entrer votre prénom';
@@ -103,9 +107,13 @@ class _InscriptionPageState extends State<InscriptionPage> {
                           return null;
                         },
                       ),
+                      SizedBox(height: 16),
                       TextFormField(
                         controller: _emailController,
-                        decoration: InputDecoration(labelText: 'Email'),
+                        decoration: InputDecoration(
+                          labelText: 'Email',
+                          border: OutlineInputBorder(),
+                        ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Veuillez entrer votre email';
@@ -114,10 +122,14 @@ class _InscriptionPageState extends State<InscriptionPage> {
                           return null;
                         },
                       ),
+                      SizedBox(height: 16),
                       TextFormField(
                         controller: _motDePasseController,
                         obscureText: true,
-                        decoration: InputDecoration(labelText: 'Mot de passe'),
+                        decoration: InputDecoration(
+                          labelText: 'Mot de passe',
+                          border: OutlineInputBorder(),
+                        ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Veuillez entrer votre mot de passe';
@@ -126,10 +138,14 @@ class _InscriptionPageState extends State<InscriptionPage> {
                           return null;
                         },
                       ),
+                      SizedBox(height: 16),
                       TextFormField(
                         controller: _confirmationMotDePasseController,
                         obscureText: true,
-                        decoration: InputDecoration(labelText: 'Confirmer le mot de passe'),
+                        decoration: InputDecoration(
+                          labelText: 'Confirmer le mot de passe',
+                          border: OutlineInputBorder(),
+                        ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Veuillez confirmer votre mot de passe';
@@ -145,7 +161,8 @@ class _InscriptionPageState extends State<InscriptionPage> {
                         onPressed: _submitForm,
                         child: Text('S\'inscrire'),
                         style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.white, backgroundColor: Colors.blue, // Texte en blanc
+                          foregroundColor: Colors.white, backgroundColor: Colors.amber, // Couleur du texte
+                          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30.0),
                           ),
@@ -160,7 +177,8 @@ class _InscriptionPageState extends State<InscriptionPage> {
                         },
                         child: Text('Se connecter avec Google'),
                         style: OutlinedButton.styleFrom(
-                          foregroundColor: Colors.amber, side: BorderSide(color: Colors.amber),
+                          foregroundColor: Colors.amber, side: BorderSide(color: Colors.amber), // Bordure de couleur or clair
+                          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30.0),
                           ),

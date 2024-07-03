@@ -2,22 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:even_amisam_app/pages/chat_page.dart';
 import 'package:even_amisam_app/pages/chatwebinaire_page.dart';
 import 'package:even_amisam_app/pages/poll_page.dart';
-import 'package:even_amisam_app/pages/quiz_page.dart';
 import 'package:even_amisam_app/pages/help_page.dart';
 import 'package:even_amisam_app/pages/participant_count_page.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:camera/camera.dart';
 
-class LivePage extends StatefulWidget {
+class ConferenceLivePage extends StatefulWidget {
   final bool isHost;
 
-  const LivePage({Key? key, required this.isHost}) : super(key: key);
+  const ConferenceLivePage({Key? key, required this.isHost}) : super(key: key);
 
   @override
-  _LivePageState createState() => _LivePageState();
+  _ConferenceLivePageState createState() => _ConferenceLivePageState();
 }
 
-class _LivePageState extends State<LivePage> with WidgetsBindingObserver {
+class _ConferenceLivePageState extends State<ConferenceLivePage> with WidgetsBindingObserver {
   CameraController? _cameraController;
   List<CameraDescription>? cameras;
   bool _isCameraInitialized = false;
@@ -187,7 +186,7 @@ class _LivePageState extends State<LivePage> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Live Page'),
+        title: const Text('Conférence en Direct'),
       ),
       body: Stack(
         children: [
@@ -200,12 +199,6 @@ class _LivePageState extends State<LivePage> with WidgetsBindingObserver {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             IconButton(
-              icon: Icon(Icons.quiz),
-              onPressed: () {
-                _openDrawer('Quiz', QuizPage());
-              },
-            ),
-            IconButton(
               icon: Icon(Icons.chat),
               onPressed: () {
                 _openDrawer('Chat Q&R', ChatPage());
@@ -214,7 +207,7 @@ class _LivePageState extends State<LivePage> with WidgetsBindingObserver {
             IconButton(
               icon: Icon(Icons.poll),
               onPressed: () {
-                _openDrawer('Sondage', PollPage());
+                _openDrawer('Sondage sur la conférence', PollPage());
               },
             ),
             IconButton(

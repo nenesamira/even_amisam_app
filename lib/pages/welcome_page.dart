@@ -12,7 +12,7 @@ class WelcomePage extends StatelessWidget {
         children: [
           // Fond avec le logo en arrière-plan
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/images/logo.jpg'), // Remplacez par le chemin vers votre logo
                 fit: BoxFit.cover, // Ajustez la façon dont l'image remplit l'écran
@@ -27,8 +27,8 @@ class WelcomePage extends StatelessWidget {
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
+                children: const [
+                  Text(
                     'Bienvenue sur notre application!',
                     style: TextStyle(
                       fontSize: 24,
